@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "bookpdf"
+version = "0.1.0"
+description = ""
+authors = ["luisanthony196 <luis.anthony.chavarria@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pypdf = { extras = ["image"], version = "^4.3.1" }
+click = "^8.1.7"
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+
+[tool.poetry.scripts]
+book = "bookpdf.__main__:cli"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
