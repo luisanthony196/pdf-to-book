@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "bookpdf"
+name = "pdfbook"
 version = "0.1.0"
 description = ""
 authors = ["luisanthony196 <luis.anthony.chavarria@gmail.com>"]
@@ -15,7 +15,7 @@ venvPath = "."
 venv = ".venv"
 
 [tool.poetry.scripts]
-book = "bookpdf.__main__:cli"
+pdftobook = "pdfbook.__main__:cli"
 
 [build-system]
 requires = ["poetry-core"]

@@ -1,7 +1,7 @@
 from pypdf import PageObject, PaperSize, PdfReader, PdfWriter, Transformation
 
-from bookpdf.coordinates import Coordinates
-from bookpdf.pagination import Pagination
+from pdfbook.coordinates import Coordinates
+from pdfbook.pagination import Pagination
 
 
 class BookFormat:

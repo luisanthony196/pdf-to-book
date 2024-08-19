@@ -7,7 +7,7 @@ Advanced converter from standard PDF to brochure mode
 Install via pipx or Rye on MacOS, Linux, and Windows:
 
 ```bash
-  pipx install pdfbook
+  pipx install pdftobook
   cd my-project
 ```
 
@@ -23,14 +23,14 @@ Install via pipx or Rye on MacOS, Linux, and Windows:
 
 Once installed, you can run PDFBook by typing tjournal in your terminal:
 ```
-pdfbook input.pdf output.pdf
+pdftobook input.pdf output.pdf
 ```
 
 To view the available arguments and commands, you can use the --help or -h flag:
 
 ```javascript
-pdfbook --help
-Usage: book [OPTIONS] INPUT OUTPUT
+pdftobook --help
+Usage: pdftobook [OPTIONS] INPUT OUTPUT
 
 Options:
   -s, --separation INTEGER        Separacion entre dos paginas

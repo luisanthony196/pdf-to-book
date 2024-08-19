@@ -1,8 +1,8 @@
 import click
 
-from bookpdf.coordinates import Coordinates
-from bookpdf.pagination import Pagination
-from bookpdf.pdf import BookFormat
+from pdfbook.coordinates import Coordinates
+from pdfbook.pagination import Pagination
+from pdfbook.pdf import BookFormat
 
 @click.command()
 @click.argument("input", type=click.File("rb"))
