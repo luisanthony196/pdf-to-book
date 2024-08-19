@@ -13,7 +13,7 @@ class BookFormat:
 
 	def create(self):
 		self.pg.process(len(self.rd.pages))
-		self.pg.make_pagination()
+		self.pg.make_separation()
 		for pg_arr in self.pg.arr:
 			ext_pag = self.wr.add_blank_page(PaperSize.A4.width, PaperSize.A4.height)
 			int_pag = self.wr.add_blank_page(PaperSize.A4.width, PaperSize.A4.height)

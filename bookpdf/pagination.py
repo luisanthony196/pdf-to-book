@@ -5,7 +5,7 @@ class Pagination:
 		self.arr = []
 		self.book = []
 		self.ranges = ranges
-		self.booklet = booklet
+		self.nro_pages = booklet
 		self.inp = include_pages
 		self.exp = exclude_pages if exclude_pages != None else []
 
@@ -27,19 +27,24 @@ class Pagination:
 				self.book.remove(p)
 
 	def make_separation(self):
-		book_len = len(self.book)
-		nro4 = book_len if book_len %4 == 0 else book_len +4 - (book_len %4)
-		if self.booklet is not None:
-			nro_booklets = math.ceil(book_len / (self.booklet *40))
-			for i in range(0, nro_booklets, self.booklet * 4):
-				self.make_pagination(i, self.booklet *4)
-		pass
+		""" Si se usa la separacion por encuadenacion
+			Entonces se verifica que exista y se itera en el
+		"""
+		nro = len(self.book)
+		nro4 = nro if nro %4 == 0 else nro +4 - (nro %4)
+		if self.nro_pages is None:
+			self.nro_pages = int(nro4 / 4)
+
+		for i in range(0, nro4, self.nro_pages * 4):
+			end = min(i + self.nro_pages *4 -1, nro4 -1)
+			self.make_pagination(i, end)
 
 	def make_pagination(self, ini = 0, end = 0):
-		nro = len(self.book)
-		end = nro if nro %4 == 0 else nro +4 - (nro %4)
-		for i in range(ini, int(end / 2), 2):
-			self.arr.append((self.gb(i), self.gb(end -i -1), self.gb(i +1), self.gb(end -i -2)))
+		""" Con los valores ini = 0 y end = 40
+			recorre el arreglo 10 veces con los valores [0, 2, 4,..., 18]
+		"""
+		for i in range(0, int((end -ini) /2), 2):
+			self.arr.append((self.gb(ini +i), self.gb(end -i), self.gb(ini +i +1), self.gb(end -i -1)))
 
 	def gb(self, ind):
 		return self.book[ind] - 1 if ind < len(self.book) else None
