@@ -1,4 +1,5 @@
-from pypdf import PageObject, PaperSize
+from pypdf import PaperSize
+
 
 class Coordinates:
 	def __init__(self, separation_space, growth) -> None:

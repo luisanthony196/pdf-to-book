@@ -24,6 +24,6 @@ def cli(input, output, separation, growth, ranges, include_pages, exclude_pages,
 
 
 def to_list(pages: str):
-	if pages != None:
+	if pages is not None:
 		return [int(i) for i in pages.split(",")]
 	return None
