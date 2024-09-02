@@ -1,22 +1,14 @@
-[tool.poetry]
-name = "pdfbook"
+[project]
+name = "pdftobook"
 version = "0.1.0"
-description = ""
-authors = ["luisanthony196 <luis.anthony.chavarria@gmail.com>"]
+description = "Add your description here"
 readme = "README.md"
+requires-python = ">=3.12"
+dependencies = ["pypdf[image]>=4.3.1", "click>=8.1.7"]
 
-[tool.poetry.dependencies]
-python = "^3.12"
-pypdf = { extras = ["image"], version = "^4.3.1" }
-click = "^8.1.7"
-
-[tool.pyright]
-venvPath = "."
-venv = ".venv"
-
-[tool.poetry.scripts]
-pdftobook = "pdfbook.__main__:cli"
+[project.scripts]
+pdftobook = "pdftobook.__main__:cli"
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"

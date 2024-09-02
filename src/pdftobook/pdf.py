@@ -1,7 +1,7 @@
 from pypdf import PageObject, PaperSize, PdfReader, PdfWriter, Transformation
 
-from pdfbook.coordinates import Coordinates
-from pdfbook.pagination import Pagination
+from pdftobook.coordinates import Coordinates
+from pdftobook.pagination import Pagination
 
 
 class BookFormat:
@@ -38,13 +38,10 @@ class BookFormat:
 				else:
 					self.trans(int_pag, page)
 
-	def trans(self, base:PageObject, page:PageObject):
-		base.merge_transformed_page(page,
-			Transformation().rotate(self.cd.get_rt()).translate(self.cd.get_trh(), self.cd.get_trv()),
-		)
-
+	def trans(self, base: PageObject, page: PageObject):
+		base.merge_transformed_page(page, Transformation().rotate(self.cd.get_rt()).translate(self.cd.get_trh(), self.cd.get_trv()), )
 
 	def save(self, output):
 		self.wr.write(output)
 		# with open(self.output_name, "wb") as fp:
-		    # self.wr.write(fp)
+		# self.wr.write(fp)

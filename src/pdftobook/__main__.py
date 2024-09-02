@@ -1,8 +1,9 @@
 import click
 
-from pdfbook.coordinates import Coordinates
-from pdfbook.pagination import Pagination
-from pdfbook.pdf import BookFormat
+from pdftobook.coordinates import Coordinates
+from pdftobook.pagination import Pagination
+from pdftobook.pdf import BookFormat
+
 
 @click.command()
 @click.argument("input", type=click.File("rb"))
@@ -19,6 +20,8 @@ def cli(input, output, separation, growth, ranges, include_pages, exclude_pages,
 	pdf = BookFormat(cod, pgn, input)
 	pdf.create()
 	pdf.save(output)
+	print(len(pgn.book), "paginas procesadas")
+
 
 def to_list(pages: str):
 	if pages != None:
